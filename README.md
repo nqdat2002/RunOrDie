@@ -1,6 +1,6 @@
 # RunOrDie - Endless Adventure Action Game
 
-![RunOrDie Logo](link_to_logo.png)
+![RunOrDie Logo](main_title_title.png)
 
 Welcome to RunOrDie, an exhilarating endless adventure action game that will test your reflexes and take you on a thrilling journey through challenging landscapes. Strap in for an adrenaline-pumping experience where the only rule is to run or... well, you know the rest!
 
