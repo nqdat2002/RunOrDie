@@ -26,3 +26,7 @@ To run the game locally, follow these steps:
 1. Clone the repository:
    ```bash
    git clone https://github.com/your_username/RunOrDie.git
+
+2. DownLoad Assets: 
+   ```bash
+   https://didigameboy.itch.io/jojo-jambo-demo
