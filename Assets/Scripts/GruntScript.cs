@@ -54,9 +54,13 @@ public class GruntScript : MonoBehaviour
 
     private void Shoot()
     {
-        Debug.Log("Shooter");
-        Vector3 direction = new(transform.localScale.x, 0.0f, 0.0f);
-        GameObject bullet = Instantiate(BulletPrefab, transform.position + direction * 0.1f, Quaternion.identity);
-        bullet.GetComponent<BulletScript>().SetDirection(direction);
+        JohnMovement john = FindObjectOfType<JohnMovement>();
+        if (john != null && !john.IsDie)
+        {
+            Debug.Log("Shooter");
+            Vector3 direction = new(transform.localScale.x, 0.0f, 0.0f);
+            GameObject bullet = Instantiate(BulletPrefab, transform.position + direction * 0.1f, Quaternion.identity);
+            bullet.GetComponent<BulletScript>().SetDirection(direction);
+        }
     }
 }

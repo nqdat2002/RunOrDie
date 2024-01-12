@@ -17,6 +17,7 @@ public class JohnMovement : MonoBehaviour
     private float LastShoot;
     private int _currentHealth;
     private bool _isDie = false;
+    private JohnMovement john;
 
     public bool IsDie {  get { return _isDie; } }
     public void Hit(int damage = 1)
@@ -33,6 +34,7 @@ public class JohnMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        john = FindObjectOfType<JohnMovement>();
         Rigidbody2D = GetComponent<Rigidbody2D>();
         Animator = GetComponent<Animator>();
         _currentHealth = maxHealth;
@@ -42,6 +44,10 @@ public class JohnMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (john != null && john.IsDie)
+        {
+            return;
+        }
         Die();
         Horizontal = Input.GetAxisRaw("Horizontal");
         if (Horizontal < 0.0f) transform.localScale = new Vector3(-1.0f, 1.0f, 1.0f);
@@ -94,9 +100,10 @@ public class JohnMovement : MonoBehaviour
 
     private void Die()
     {
-        if (transform.position.y <= -230f)
+        if (transform.position.y <= -100.0f)
         {
             _isDie = true;
+            _currentHealth = 0;
         }
     }
 

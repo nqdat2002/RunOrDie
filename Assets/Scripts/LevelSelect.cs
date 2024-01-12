@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelSelect : MonoBehaviour
 {
@@ -16,7 +17,12 @@ public class LevelSelect : MonoBehaviour
 
     public void OnButtonPress(string levelName)
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(levelName);
+        SceneManager.LoadScene(levelName);
+    }
+
+    public void OnButtonBack()
+    {
+        SceneManager.LoadScene("Menu");
     }
 
     // Start is called before the first frame update

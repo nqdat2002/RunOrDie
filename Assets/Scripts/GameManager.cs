@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public static int currentScore = 0;
     public Text score;
+    public Text levelName;
     public float spawnInterval = 60f;
     public int requireScore;
     public GameOver gameover;
@@ -15,6 +17,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         score.text = "Score: " + currentScore.ToString();
+        levelName.text = SceneManager.GetActiveScene().name;
     }
 
     // Update is called once per frame
